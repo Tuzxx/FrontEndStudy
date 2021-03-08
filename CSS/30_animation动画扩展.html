@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin-bottom: 10px;
+        }
+        /* animation-fill-mode */
+        /* #box_1{ 
+            animation: move 2s 1s; none 
+        }
+        #box_2{
+            animation: move 2s 1s backwards; backwards 动画开始前会显示0%的状态 
+        }
+        #box_3{
+            animation: move 2s 1s forwards; forwards 动画结束后会保持不变 
+        }
+        #box_4{
+            animation: move 2s 1s both; 以上两种特性都有 
+        } */
+
+        /* animation-direction */
+        #box_1{
+            animation: move 2s infinite alternate; /* alternate 第一次从头到尾 第二次从尾到头 */
+        }
+        #box_2{
+            animation: move 2s infinite reverse; /* reverse 反向运动 */
+        }
+        @keyframes move {
+            0% {transform: translate(0, 0); background-color: cadetblue;}
+            100% {transform: translate(300px, 0);}
+        }
+    </style>
+</head>
+<body>
+    <div id="box_1"></div>
+    <div id="box_2"></div>
+    <div id="box_3"></div>
+    <div id="box_4"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        position :
+            static ( 默认)
+            relative
+            absolute
+            fixed
+            sticky 
+
+        relative:
+            如果没有定位偏移量，对元素本身没有任何影响
+            不使元素脱离文档流
+            不影响其他元素布局
+            left、top、right、bottom是相对于当前元素自身进行偏移的 
+
+        absolute:
+            使元素完全脱离文档流
+            使内联元素支持宽高(让内联具备 块特性)
+            使块元素默认宽根据内容决定(让块具备内联的特性)
+            如果有定位祖先元素相对于定位祖先元素发生偏移，没有定位祖先元素相对于整个文档发生偏移(绝对、相对、固定)
+
+        fixed:
+            使元素完全脱离文档流
+            使内联元素支持宽高( 让内联具备块特性)
+            使块元素默认宽根据内容决定(让块具备内联的特性)
+            相对于整个浏览器窗]进行偏移, 不受浏览器滚动条的影响
+
+        */
+
+        /* relative */
+        /* #box_1{width: 100px; height: 100px; background-color: crimson;}
+        #box_2{width: 100px; height: 100px; background-color: darkblue; 
+                position: relative; left: 100px; top: 100px;} 
+        #box_3{width: 100px; height: 100px; background-color: chocolate;} */
+        
+        /* absolute */
+        #box_1{width: 100px; height: 100px; background-color: cornflowerblue; position: absolute; z-index: 2;} /* 脱离文档流 */
+        #box_2{width: 200px; height: 200px; background-color: crimson; position: absolute; z-index: 1;} /* z-index是z轴优先级，数字大的在上面 */
+        #box_3{background-color: darkgreen; position: absolute; top: 200px; left: 0;} /* 块元素默认宽为100% absolute使块元素默认宽根据内容决定*/
+        #s_1{width: 100px; height: 100px; background-color: darkgoldenrod; position: absolute;} /* 可以让内联元素支持宽高 */
+
+        /* 如果子元素有absolute定位，而父元素及以上没有定位(absolute,relative,fixed)则子元素按整个文档定位 */
+        #box_4{width: 500px; height: 500px; border: solid; margin: 100px 500px;}
+        #box_5{width: 100px; height: 100px; background-color:crimson; position: absolute; right: 0; top: 0;}
+
+        /* 跟着浏览器窗口一起移动，位置固定不变，不受父元素影响 */
+        body{height: 3000px;}
+        #box_6{width: 50px; height: 50px; background-color: crimson; position: fixed; right: 0; bottom: 0;}
+
+        /* 会在指定位置跟着浏览器窗口移动 */
+        #box_7{background-color: darkmagenta; position: sticky; top: 0;}
+
+
+    </style>
+</head>
+<body>
+    <div id="box_1">1</div>
+    <div id="box_2">2</div>
+    <div id="box_3">3</div>
+    <span id="s_1"></span>
+    <div id="box_7">7</div>
+    <div id="box_4">4
+        <div id="box_5">5</div>
+    </div>
+    <div id="box_6">6</div>
+</body>
+</html>

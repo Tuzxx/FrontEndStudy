@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS新特性 */
+        /* 仅新浏览器支持 */
+
+        /* 变量 */
+        /* :root 这个 CSS 伪类匹配文档树的根元素。对于 HTML 来说，:root 表示 <html> 元素，除了优先级更高之外，与 html 选择器相同。 */
+        /* 用于声明全局变量 */
+        :root{
+            --color: blue;
+            --fontSize: 16px; 
+            --width: 300px;
+            --height: 300;
+        }
+        body{
+            height: 2000px;
+        }
+        #parent{
+            background: var(--color);
+            width: var(--width);
+            height: calc(var(--height) * 1px); /* 添加单位 */
+            font-size: var(--fontSize, 16px); /* 添加默认值 */
+            border: 1px black solid;
+            margin: 20px;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            border: 1px black solid;
+            margin: 10px;
+            float: left;
+            background-color: blueviolet;
+
+            /* 不规则的文字环绕 */
+            /* shape-outside: margin-box; */ /* margin-box margin区域环绕 border-box border区域环绕 content-box 内容区域环绕 */
+            clip-path: polygon(0 0, 100px 0, 50px 100px); /* 自定义裁剪图形 */
+            shape-outside: polygon(0 0, 100px 0, 60px 100px); /* 自定义环绕 */
+            shape-margin: 20px; /* 裁切图形和文字的间距 */
+        }
+
+        /* 自定义滚动条 */
+        html::-webkit-scrollbar{
+            width: 10px;
+        }
+        /* 滚动条样式 */
+        html::-webkit-scrollbar-thumb{
+            background: blueviolet;
+            border-radius: 5px;
+        }
+        /* 滚动条背景颜色 */
+        html::-webkit-scrollbar-track{
+            background-color: cadetblue;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{ list-style: none;}
+        #scroll{
+            width: 600px;
+            height: 100px;
+            border: 1px black solid;
+            margin: 100px;
+            overflow: auto;
+            
+            /* 滚动捕捉 */
+            scroll-snap-type: x mandatory; /* 水平方向 */
+        }
+        #scroll ul{
+            width: 4000px;
+        }
+        #scroll li{
+            width: 300px;
+            height: 100px;
+            background-color: crimson;
+            float: left;
+            margin: 0 100px;
+
+            /* 对齐位置 */
+            scroll-snap-align: start; /* center */ /* end */
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="box"></div>
+        蝙蝠侠（英语：Batman）是一名出现于DC漫画的虚构超级英雄角色，它由鲍勃·凯恩和比尔·芬格[4][5]创作，角色首次登场于《侦探漫画》第27期（1939年5月）。最初被称为“蝙蝠人”[6]，后来还有“黑暗骑士”[6]、“世界最伟大的侦探”[6]等其他称号。
+    </div>
+    <div id="scroll">
+        <ul>
+            <li>11111</li>
+            <li>22222</li>
+            <li>33333</li>
+            <li>44444</li>
+            <li>55555</li>
+        </ul>
+    </div>
+</body>
+</html>

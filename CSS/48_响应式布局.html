@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+        
+        /* 触发条件 : 设备要求 自定义要求 */
+        /* 自定义要求 : min-width max-width */
+        /* orientation : portrait竖屏  landscape横屏 */
+        /* 连接词 : not and or */
+        @media not all and (min-width: 600px){
+            .box{
+                background-color: brown;
+            }
+        }
+        @media all and (orientation: landscape){
+            .box{
+                background-color: hotpink;
+            }
+        }
+    </style>
+    <!-- link写法 -->
+    <link rel="stylesheet" href="#" media="all and (min-width:400px)">
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

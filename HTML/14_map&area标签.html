@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 作用: 给特殊图形添加链接 area能添加的热区形状: 矩形,圆形，多边形 -->
+    <img src="../img/sm.jpg" alt="" usemap="#superman">
+    <map name="superman">
+        <!-- <area shape="rect" coords="547 199 1417 739" href="https://baidu.com" alt="百度"> 矩形 写左上坐标 右下坐标即可 -->
+        <!-- <area shape="circle" coords="969 403 200" href="https://baidu.com" alt="百度"> 圆形 写圆心坐标 半径大小即可 -->
+        <area shape="poly" coords="703 200 544 332 981 726 1417 334 1260 202" href="https://baidu.com" alt="百度"> <!-- 写按顺序写每个角的坐标即可 -->
+    </map>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* ifelse 语句 */
+        var num = 0;
+        if(num > 0){
+            document.write("num是正数" + "<br>");
+        }else if(num == 0){
+            document.write("num是0" + "<br>");
+        }else{
+            document.write("num是负数" + "<br>");
+        }
+
+        /* switch 语句 */
+        var grade = "A";
+        switch(grade){
+            case "A":
+                document.write("优秀" + "<br>");
+                break;
+            case "B":
+                document.write("良好" + "<br>");
+                break;
+            case "C":
+                document.write("及格" + "<br>");
+                break;
+            case "D":
+                document.write("不及格" + "<br>");
+                break;
+            default:
+                document.write("error" + "<br>");
+                break;
+        }            
+
+        /* 三目运算符 */
+        num % 2 == 0? document.write("偶数" + "<br>"): document.write("奇数" + "<br>");
+
+        /* switch简化写法 */
+        var month = 2;
+        var year = 2012;
+        switch(month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.write("这个月有31天" + "<br>");
+                break;
+            case 2:
+                if(year%4 == 0 && year%100 != 0 || year%400 == 0){
+                    document.write("这个月有29天" + "<br>");
+                }else{
+                    document.write("这个月有28天" + "<br>");
+                }
+                break;
+            default:
+                document.write("这个月有30天" + "<br>");
+                break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

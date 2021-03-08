@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" cellpadding="20" cellspacing="2">
+        <caption>城市天气</caption>
+        <tHead>                 <!-- tHead,tBody,tFoot是语义化标签，无任何效果 -->
+            <tr>                <!-- table是表格 tr是表行 th是表头 td是表格单元 caption是表格标题 -->
+                <th colspan="2">城市</th>
+                <th>天气</th>
+                <th>日期</th>
+            </tr>
+        </tHead>
+        <tBody>                 <!-- border是表框粗细 cellpadding是单元格大小 cellspacing是单元格的间隔大小 -->
+            <tr>                <!-- colspan是跨列 rowspan是跨行 align是左右对齐 valign是上下对齐 -->
+                <td>深圳</td>
+                <td>福田</td>
+                <td>多云小雨不宜出门</td>
+                <td rowspan="2">2020.3.14</td>
+            </tr>
+            <tr>
+                <td>广州</td>
+                <td>从化</td>
+                <td>天气晴朗，空气舒适</td>
+            </tr>
+        </tBody>
+        <tFoot>
+            
+        </tFoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    没有默认样式的: div、span
+
+    有默认样式的:
+    body -> margin:8px
+
+    h1 ->   margin-top/bottom:21.440px
+
+    font -> weight:bold
+            margin-top/bottom:16px
+
+    ul ->   margin-top/bottom:16px padding-left:40px
+            默认标点 - list-style:disc
+
+    a ->    text-decoration:underline;
+
+    CSS reset :
+        *{ margin:0; padding:0;}
+            优点:不用考虑哪些标签有默认的margin和padding
+            缺点:稍微的影响性能
+        body,p,h1,ul{ margin:0; padding:0; }
+
+        ul{ list-style: none }
+        
+        a{ text-decoration:none ; color:#999; }
+
+        img{ display:block }
+            问题:图片底部有缝隙
+                原因:内联元素的对齐方式是按照文字基线对齐，而不是文字底线
+                vertical-align:baseline
+
+            解决方法:vertical-align:bottom
+        
+        写页面的顺序:
+            1. 写结构
+            2. CSS重置样式 https://blog.csdn.net/brain_bo/article/details/81560444
+            3. 写具体样式
+</body>
+</html>

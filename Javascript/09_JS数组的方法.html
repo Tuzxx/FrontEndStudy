@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 数组的方法 */
+        /*
+            栈结构
+                结构: 从下往上存入数据 栈底先入 栈顶先出
+                特点: 先入后出 后入先出
+
+            Push方法
+                数组.push(数据1, 数据2, ...);
+                    可从数组后面添加数据
+                        返回值是添加数据后数组长度大小
+
+            Pop方法
+                数组.pop(无参数)
+                    将数组最后一位元素取出
+                        返回值是取出的元素数据
+
+        */
+        var arr1 = ["tom", "tim"];
+        arr1.push("Mary", "John");
+        var test = arr1.pop();
+        document.writeln(test);
+        document.writeln(arr1);
+        document.write("<br>");
+
+        /*
+            队列结构
+                结构: 队尾插入 队头取出
+                特点: 先进先出 后进后出
+
+            Push方法
+                数组.push(数据1, 数据2, ...);
+                    可从数组后面添加数据
+                        返回值是添加数据后数组长度大小
+
+            Shift方法
+                数组.shift(无参数)
+                    将数组第一位元素取出
+                        返回值是取出的元素
+
+            Unshift方法
+                数组.unshift(数据1, 数据2, ...)
+                    可从数组头部插入元素
+                        返回值是插入元素后数组的长度
+        */
+        var arr2 = ["tom", "tim"];
+        arr2.push("Mary", "John");
+        var test = arr2.shift();
+        document.writeln(test);
+        document.writeln(arr2);
+        document.writeln(arr2.unshift("Xiaoming", "Xiaohong"));
+        document.write("<br>");
+
+        /*
+            concat方法
+                数组.concat(元素/数组...)
+                    将多个元素和数组组成一个新的数组(原数组不会改变)
+                        返回值是组成的新数组
+        */
+        var c1 = [1, 2, 3];
+        var c2 = [4, 5, 6];
+        var c3 = [7, 8, 9];
+        var c = c1.concat(c2, c3, 'end');
+        document.writeln(c);
+        document.write("<br>");
+
+        /*
+            slice方法
+                数组.slice(start, end)
+                    指定当前数组元素区域 [start, end)
+                        返回值为指定区域的元素组成的新数组
+        */
+        var s = [1, 2, 3, 4, 5];
+        document.writeln(s.slice(2, 4));
+        document.write("<br>");
+
+        /*
+            splice方法
+                数组.splice(start, length, 数据1, 数据2, ...)
+                    start-截取起点 length-截取长度 数据-插入元素
+                        返回值为截取下来的元素组成的新数组
+        */
+        var sp = [0, 1, 2, 3, 4];
+
+        /* 利用splice添加 */
+        sp.splice(5, 0, "new1", "new2");
+        document.write(sp);
+        document.write("<br>");
+        
+        /* 利用splice删除 */
+        sp.splice(6, 1);
+        document.write(sp);
+        document.write("<br>");
+
+        /* 利用splice修改 */
+        sp.splice(5, 1, "new3");
+        document.write(sp);
+        document.write("<br>");
+
+        /*
+            join方法
+                数组.join(字符串)
+                    将数组中的元素用传入的字符串连接起来，拼成一个新的字符串
+                        返回值为新的字符串
+        */
+        var jo = ["Hi", "I", "am", "Tuzx"];
+        document.write(jo.join("="));
+        document.write("<br>");
+
+        /*
+            reverse方法
+                数组.reverse()
+                    将数组元素排序倒过来
+                        返回值为倒序后的数组
+        */
+        var rev = ["1", "2", "3", "4"];
+        rev.reverse();
+        document.write(rev);
+        document.write("<br>");
+
+        /*
+            sort方法
+                数组.sort()
+                    数组按照字符串大小从小到大排序(逐位比较)
+                        返回值为排序后的数组
+        */
+        var so = [1, 31, 22, 5, 44, 25, 237, "1bc", "2ba"];
+        so.sort();
+        document.write(so);
+        document.write("<br>");
+
+        /* 数值大小排序 */
+        var so1 = [10, 2, 4, 1, 22, 44, 11, 33];
+        /* 从小到大 */
+        so1.sort(function(value1, value2){
+            return value1 - value2;
+        });
+        document.write(so1);
+        document.write("<br>");
+        /* 从大到小 */
+        so1.sort(function(value1, value2){
+            return value2 - value1;
+        });
+        document.write(so1);
+        document.write("<br>");
+
+        /*
+            indexOf方法
+                数组.indexOf(item, start)
+                    从start开始查找第一次出现的item(start默认值为0)
+                    返回值为item下标(若找不到则返回-1)
+        */
+        var ind = [1, 2, 3, 4];
+        document.write(ind.indexOf(2));
+        document.write("<br>");
+
+        /*
+            forEach方法
+                数组.forEach(function(item, index, 数组))
+                    循环遍历数组 item是当前循环的数组元素 index是元素下标 数组为当前遍历的数组
+                        无返回值 会改变原数组 适用于遍历输出或存入数据库等不改变数据的操作
+        */
+        var fe = [1, 2, 3, 4, 5];
+        var fet = fe.forEach(function(item, index, fe){
+            document.write("元素: " + item + " 下标: " + index + "<br>");
+        }) 
+        document.write(fet);
+        document.write("<br>");
+
+        /*
+            map方法
+                数组.map(function(item, index, 数组))
+                    循环遍历[处理]数组 item是当前循环的数组元素 index是元素下标 数组为当前遍历的数组
+                        返回值为处理后的新数组 适用于批量处理数组数据 不改变原数组数据
+        */
+        var m = [1, 2, 3, 4, 5];
+        var mt = m.map(function(item, index, m){
+            document.write("元素: " + item + " 下标: " + index + "<br>");
+            if(item % 2 == 0){
+                return item * 20; /* 偶数*20 */
+            }else{
+                return item * 10; /* 奇数*10 */
+            }
+        }) 
+        document.write(mt);
+        document.write("<br>");
+
+        /*
+            filter方法
+                数组.filter(function(item, index, 数组))
+                    循环遍历[过滤]数组 item是当前循环的数组元素 index是元素下标 数组为当前遍历的数组
+                        返回值为过滤后的新数组 原数组不会被改变 适用于去除数组中大量具有同意特征的元素
+        */
+        var fil = [1, 2, 3, 4, 5, 6, 7, 8];
+        var filt = fil.filter(function(item, index, fil){
+            return item % 2 == 0; /* 保留偶数 */
+        })
+        document.write(fil);
+        document.write("<br>");
+        document.write(filt);
+        document.write("<br>");
+
+        /*
+            some方法
+                数组.some(function(item, index, 数组))
+                    循环遍历数组 查找数组中是否有[符合]return值的元素(若找到一个则直接终止循环，返回true)
+                        返回值为布尔值 有符合元素则返回true 否则返回false
+        */
+        var som = [1, 2, 3, 4, 5];
+        var somt = som.some(function(item, index, som){
+            return item % 2 == 0;
+        });
+        document.write(somt);
+        document.write("<br>");
+
+        /*
+            every方法
+                数组.every(function(item, index, 数组))
+                    循环遍历数组 查找数组中是否有[不符合]return值的元素(若找到一个则直接终止循环，返回false)
+                        返回值为布尔值 有符合元素则返回true 否则返回false
+        */
+        var eve = [1, 2, 3, 4, 5];
+        var evet = eve.every(function(item, index, eve){
+            return item % 10 != 0;
+        });
+        document.write(evet);
+        document.write("<br>");
+
+        /*
+            reduce
+                数组.reduce(function(previousValue, currentValue, currentIndex, 数组)
+                    previousValue 上一次调用回调函数时的返回值，或者初始值(第一个元素数值)
+                        currentValue 当前正在处理的数组元素
+                            currentIndex 当前正在处理的数组元素下标
+                                数组迭代处理 从数组第一个元素开始不断地和下一个元素累计计算直到最后一个元素
+                                    适用于计算数组总和，乘积...
+                                        返回值为计算结果
+                                            [函数从第二个元素开始 而previousValue则为第一个元素的值]
+        */
+        var red = [1, 2, 3, 4, 5, 6, 7, 8];
+        var redt = red.reduce(function(previousValue, currentValue, currentIndex, red){
+            document.write("previousValue: " + previousValue + " currentValue: " + currentValue + " currentIndex: " + currentIndex);
+            document.write("<br>");
+            return previousValue + currentValue;
+        })
+        document.write(redt);
+        document.write("<br>");
+        
+        /* 练习 */
+        var ous = new Array(30);
+        for(var i = 0; i < 30; i++){
+            ous[i] = (i+1) * 2;
+        }
+        document.write(ous);
+        document.write("<br>");
+        var avg = new Array;
+        var count = 0, tmp = 0;
+        for(var i in ous){
+            count++;
+            tmp += ous[i];
+            if(count % 5 == 0){
+                avg.push(tmp / 5);
+                tmp = 0;
+            }
+        }
+        document.write(avg);
+        document.write("<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

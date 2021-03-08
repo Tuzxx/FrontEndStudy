@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 等高布局 */
+        /* 左/右变高将容器撑开时 */
+        /* 右/左也会跟着变得一样高 */
+        .f_box{
+            border: 10px black solid;
+            overflow: hidden;
+        }
+        .l_box{
+            width: 100px;
+            float: left;
+            background-color: blueviolet;
+            margin-bottom: -2000px;
+            padding-bottom: 2000px;
+        }
+        .r_box{
+            width: 100px;
+            float: right;
+            background-color: cadetblue;
+            margin-bottom: -2000px;
+            padding-bottom: 2000px;
+        }
+        /* 原理: */
+        /* margin-bottom 和 padding-bottom 把box变成2000px高 */
+        /* overflow将它们隐藏了起来 */
+        /* 当box有内容时就会将父容器撑开 */
+        /* 内容不足的box也会跟着变高 */
+    </style>
+</head>
+<body>
+    <div class="f_box">
+        <div class="l_box">
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+        </div>
+        <div class="r_box">
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+            <p>2</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* rem单位 */
+        /* 比例单位 以html标签的font-size大小为基准 */
+        /* 1rem = 1 font-size */
+        /* 好处: 手机端页面可以根据手机屏幕大小进行等比例缩放 */
+        .box{
+            width: 1rem;
+            height: 2rem;
+            background-color: blueviolet;
+            border: 0.1rem black solid;
+        }
+        /* vw单位 */
+        /* 把浏览器屏幕分成一百份 */
+        /* 1vw = 1%width */ /* 1vh = 1%height */
+        /* 自动根据屏幕大小设置html的font-size */
+        html{
+            font-size: 26.666667vw; /* iphone6 100px */ /* iphone6 plus 110.4px */
+            /* 和JS方法的font-size一样大 = 100px */
+        }
+        body{
+            font-size: 16px; /* 重置 防止页面的默认字体变成html的font-size */
+        }
+    </style>
+</head>
+<body>
+    <!-- 自动根据屏幕大小设置html的font-size -->
+    <script>
+        var fontsize = document.documentElement.clientWidth / 3.75;
+        document.documentElement.style.fontSize = fontsize + 'px';
+    </script>
+    <div class="box"></div>
+</body>
+</html>

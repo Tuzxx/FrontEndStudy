@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 网格布局 */
+    /* 新单位 fr 网格剩余空间比例单位 */
+    /* 规律的网格可以用repeat来简化操作 */   
+    .box{
+        width: 300px;
+        height: 300px;
+        border: 1px black solid;
+        display: grid; /* 网格布局 */
+        /* grid-template-rows: 100px auto 25%; */ /* 3行 第一行行高100px 第二行自适应 第三行占容器高度25% */
+        /* grid-template-columns: 100px 100px 200px 100px; */ /* 4列 */
+        /* grid-template-rows: 1fr 1fr 1fr; */ /* 3行 每行一份 容器总高度分三份 若加起来不到1,则会有多余空白 */
+        /* grid-template-columns: 1fr 1fr 1fr; */ /* 3列 每列一份 容器总宽度分三份 */
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 和上面是一样的 */
+    }
+    #box2{
+        width: 300px;
+        height: 300px;
+        border: 1px black solid;
+        display: grid;
+        /* grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:"a1 a1 a1" "b1 b1 b1" "c1 c1 c1"; */
+        grid-template:
+        "a1 a1 b1" 1fr
+        "a1 a1 b1" 1fr
+        "c1 c1 b1" 1fr
+        /1fr 1fr 1fr; /* 复合写法 */
+        grid-column-gap: 10px; /* 列间隙 */
+        grid-row-gap: 20px; /* 行间隙 */
+        grid-gap: 10px 10px; /* 复合写法: 行 列 */
+    }
+    #box2 div{
+        border: 1px solid black;
+    }
+    #box2 div:nth-child(1){ grid-area: a1;}
+    #box2 div:nth-child(2){ grid-area: b1;}
+    #box2 div:nth-child(3){ grid-area: c1;}
+    
+    #box3{
+        width: 600px;
+        height: 200px;
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(1, 100px);
+        justify-items: end; /* 默认stretch(拉伸) 占满整个网格 start-起始处对齐 center-居中对齐 end-末尾处对齐 */ /* 水平 */
+        align-items: end; /* 默认stretch(拉伸) 占满整个网格 start-起始处对齐 center-居中对齐 end-末尾处对齐 */ /* 垂直 */
+        place-items: center center; /* 复合写法 align justify */
+        
+        /* justify-content: space-between;
+        align-content: space-around; */
+        place-content: space-around space-around; /* 复合写法 align justify */
+        /* justify-content 和 align-content 是控制全部网格的对齐属性 */
+        /* justify-content是水平方向上的 */
+        /* align-content是垂直方向上的 */
+        /* 都有一样的值 stretch(默认值)-拉伸 start-起始位置对齐 end-末尾位置对齐 center-居中对齐 space-between-两端对齐 */
+        /* space-around-每个网格两侧大小相等的margin区域 space-evenly-平均分配空白区域 */
+    }
+    #box3 div{
+        width: 50px;
+        height: 50px;
+        background-color: blueviolet;
+        border: 1px black solid;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <div id="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div id="box3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

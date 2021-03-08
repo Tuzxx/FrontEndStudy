@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 字符串 */
+        /* 只读 不可修改 */
+        var str1 = new String("Hello" + "世界");    /* Object / 对象 */    
+        var str2 = String("str2");                 /* String */
+        var str3 = "str3";                         /* String */
+        document.write((str1 + "!") + "<br>");
+
+        /* 统计字符串中字符个数 */
+        /* 【注】汉字在utf-8中一个汉字占3个字符 在gbk中一个汉字占2个字符 */
+        /* 在计数时算1个字符 */
+        document.write(str1 + str1.length + "<br>");
+
+        /* 访问字符串中的字符 */
+        document.write(str1[4] + "<br>");
+
+        /* 字符串的方法 */
+        document.write("hello".big() + "R".sub() + "world".fontcolor("blue") + "yes".sup() + "<br>"); /* 没什么用 */
+        
+        /* charCodeAt() 查询字符的ASCII码值 */
+        document.write(str1[2].charCodeAt() + "<br>");
+
+        /* String.fromCharCode 将ASCII码转换成对应字符并组成字符串 */
+        var str = String.fromCharCode(55, 66, 77, 88, 99, 109, 119);
+        document.write(str + "<br>")
+
+        /*
+            indexOf方法
+                查找字符串中是否有符合的字符串
+                    若有则返回找到的第一个所在位置的下标
+                        若没有则返回-1
+                            若不设定起始位置则默认从0开始
+        */
+        var ind = "123123123";
+        document.write(ind.indexOf(3) + "<br>");
+
+        /*
+            lastIndexOf方法
+                查找字符串中是否有符合的字符串
+                    若有则返回找到的最后一个所在位置的下标
+                        若没有则返回-1
+                            若不设定起始位置则默认从0开始
+        */
+        var lio = "123123123";
+        document.write(lio.lastIndexOf("3", 4) + "<br>");
+
+        /*
+            search方法
+                查找字符串中是否有符合的字符串
+                    参数可输入正则表达式
+                        若有则返回所在位置的下标
+                            若没有则返回-1
+                                若不设定起始位置则默认从0开始
+        */
+        var  sea = "abcdefg";
+        document.write(sea.search(/cde/) + "<br>");
+
+        /*
+            substring方法
+                字符串.substring(start, end)
+                    提取字符串start->end区域
+                        返回新字符串
+        */
+        var ss = "HelloWorld"
+        var sst = ss.substring(2, 5);
+        document.write(sst + "<br>");
+
+        /*
+            replace方法
+                字符串.replace(old, new)
+                    替换字符串指定内容(输入字符串只能替换第一个匹配到的)
+                        需要替换全部匹配到的需要用正则表达式: /需要替换的内容/g g:全局匹配 i:不区分大小写
+                            返回新字符串
+        */
+        var rp = "How is you"
+        var rpt = rp.replace("is", "are");
+        document.write(rpt + "<br>");
+
+        /*
+            split方法
+                字符串.split(分隔符, length)
+                    用分隔符将字符串分隔组成数组返回 分隔符:划分字符串的字符 length:控制返回数组元素的数量
+                        返回数组
+                            分隔符相邻时，会产生空字符串元素
+                                分隔符为空字符时，会将字符串每个字符分隔
+        */
+        var sp = "Hello old are you"
+        var spt = sp.split("o");
+        document.write(sp + "<br>" + spt + "<br>");
+
+        /*
+            toLowerCase 将字符串全部小写
+            toUpperCase 将字符串全部大写
+        */
+        var to = "HelloWorld"
+        var tlc = to.toLowerCase();
+        var tuc = to.toUpperCase();
+        document.write(to + "<br>" + tlc + "<br>" + tuc + "<br>");
+
+        /*
+            concat
+                字符串拼接
+        */
+        var con = "hello";
+        var cont = con.concat("world", "!");
+        /* var cont = con + "world" + "!" */ /* 这条语句和上面是一样的效果 */
+        document.write(cont + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

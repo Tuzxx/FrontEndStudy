@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_1{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+    <script>
+        /*
+            DOM Document Object Model 文档对象模型
+                节点类型:
+                    元素节点 <div></div>
+                    属性节点 id="div_1"
+                    文本节点 文本内容
+                
+                获取节点信息
+        */
+        var oDiv = document.getElementById("div_1");
+        document.write(oDiv.id + "<br>");
+        /* 这种方法是错误的，因为页面还没加载，所以获取不到div */
+        /* 要写在div下面 */
+        /* 或者用onload方法 */
+    </script>
+</head>
+<body>
+    <div id="div_1" class="div_2" title="dom" style="width: 100px; height: 100px; background: blue;">文本内容</div>
+</body>
+<script>
+    var oDiv1 = document.getElementsByTagName("div");
+    var oDiv2 = document.getElementById("div_1");
+    // document.getElementByTagName (标签名)
+    // document.getElementByClassName (Class名)
+    // document.getElementByName (Name属性的值)
+    // 返回值是数组
+
+    document.write(oDiv2.id + "<br>");
+    document.write(oDiv2.className + "<br>");
+    document.write(oDiv2.title + "<br>");
+
+    /* 
+    
+        document.querySelector()
+        返回 第一个找到的元素节点
+
+        document.querySelectorAll()
+        返回数组
+
+        参数是字符串 CSS选择器格式的字符串
+
+        ById
+        document.querySelector("#id1")
+
+        ByTagName
+        document.querySelector("div")
+
+        ByClassName
+        document.querySelector(".class1")
+
+        在div下的class=class1
+        document.querySelector("div .class1")
+
+        ByName
+        document.querySelector("[Name=div1]")
+
+    */
+
+    /* 只能获取行间样式 */
+    /* document.write(oDiv.style.width + "<br>");
+    document.write(oDiv.style.height + "<br>");
+    document.write(oDiv.style.background + "<br>"); */
+
+
+    // 获取当前元素节点有效样式
+    // alert(oDiv2.currentStyle['height']); // IE
+    // alert(getComputedStyle(oDiv2)["height"]); // FireFox,Chrome
+
+    // 跨浏览器获取样式
+    function getStyle(node, style){
+        return node.currentStyle ? node.currentStyle[style] : getComputedStyle(node)[style];
+    }
+
+    alert(getStyle(oDiv2, "height"));
+</script>
+    <div>
+        <div id="div_1"></div>
+    </div>
+</html>

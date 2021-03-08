@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box_1{
+            width: 400px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px black solid;
+            perspective: 200px; /* 给3D动作添加透视效果 */
+        }
+        #box_2{
+            width: 100px;
+            height: 100px;
+            margin: 100px auto 0 auto;
+            background-color: blueviolet;
+            animation: thrDX 2s infinite ease;
+        }
+        #box_3{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 0 auto;
+            background-color: crimson;
+            animation: thrDY 2s infinite ease;
+        }
+        #box_4{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 0 auto;
+            background-color: darkblue;
+            animation: thrDZ 2s infinite ease;
+        }
+
+        @keyframes thrDX { /* 上下翻转 */
+            0% { transform: rotateX(0deg);}
+            100% { transform: rotateX(360deg);}
+        }
+        @keyframes thrDY { /* 左右翻转 */
+            0% { transform: rotateY(0deg);}
+            100% { transform: rotateY(360deg);}
+        }
+        @keyframes thrDZ { /* 前后移动 */
+            0% { transform: translateZ(0);}
+            50% { transform: translateZ(-150px);}
+            100% { transform: translateZ(0);}
+        }
+    </style>
+</head>
+<body>
+    <div id="box_1">
+        <div id="box_2"></div>
+        <div id="box_3"></div>
+        <div id="box_4"></div>
+    </div>
+</body>
+</html>

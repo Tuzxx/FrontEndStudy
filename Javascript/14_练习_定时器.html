@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .timer{
+            height: 600px;
+            width: 400px;
+            background-color: blueviolet;
+            margin: 100px auto;
+            border-radius: 20px;
+            box-shadow: 0px 5px 5px 3px #cccccc;
+            text-align: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #divTime{
+            margin: 100px 0px 50px 0px;
+            font-size: 100px;
+        }
+        .timer button{
+            margin: 25px 0px;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        var time = 0;
+        var tTimer = null;
+        function timer(){
+            time++;
+            var hour = doubleNum(parseInt(time / 3600));
+            var min = doubleNum(parseInt(time / 60 % 60));
+            var sec = doubleNum(parseInt(time % 60));
+            var str = hour + ":" + min + ":" + sec;
+            
+            return str;
+        }
+        function doubleNum(n){
+            if(n < 10){
+                return "0" + n;
+            }else{
+                return n;
+            }
+        }
+        function pause(){
+            clearInterval(tTimer);
+        }
+        function startTimer(){
+            tTimer = setInterval(showTimer, 1000);
+        }
+        function showTimer(){
+            var idTimer = document.getElementById("divTime");
+            idTimer.innerHTML = timer();
+        }
+        function reset(){
+            time = 0;
+            clearInterval(tTimer);
+            var idTimer = document.getElementById("divTime");
+            idTimer.innerHTML = "00:00:00";
+        }
+    </script>
+</head>
+<body>
+    <div class="timer">
+        <div id="divTime">00:00:00</div>
+        <button onclick="startTimer()">开始</button><br>
+        <button onclick="pause()">暂停</button><br>
+        <button onclick="reset()">重置</button>
+    </div>
+</body>
+</html>

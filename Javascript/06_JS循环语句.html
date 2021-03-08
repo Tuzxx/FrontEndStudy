@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 循环语句 */
+
+        /* while */
+        var i = 0;
+        var sum = 0;
+        while(i < 10){
+            i++;
+            sum += i;
+        }
+        document.write(sum + "<br>");
+
+        /* do_while */
+            /* 条件判断后置，所以第一次循环没有条件判断 */
+        var i = 0;
+        var sum = 0;
+        do{
+            i++;
+            sum += i;
+        }while(i < 10);
+        document.write(sum + "<br>");
+        
+        /* for */
+        sum = 0;
+        for(var i = 0; i <= 10; i++){
+            sum += i;
+        }
+        document.write(sum + "<br>");
+
+        /* 
+            break;
+                跳出
+                    跳出循环，跳出switch
+            
+            continue;
+                跳过
+                    跳过本次循环，进入下个循环
+        */
+
+        /* Math.pow(数值, 幂) 幂运算 */
+        /* Math.ceil(小数) 向上取整 例3.01 => 4 */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://baidu.com">
+        电子邮箱: <input type="email"><br> <!-- 提交时会检查邮箱格式正确与否 -->
+        网址: <input type="url"><br> <!-- 提交时会检查网址是否填写正确 -->
+        数字: <input type="number"><br> <!-- 只能输入数字和加减号 且 可以通过按钮加减数字 -->
+        滑动条: <input type="range" min="0" max="10" value="5"><br> <!-- 滑动条 -->
+        日期: <input type="date"><br> <!-- 精确到日期 可通过菜单选择日期 也可自己输入日期 -->
+        月份: <input type="month"><br> <!-- 精确到月份 -->
+        星期: <input type="week"><br> <!-- 精确到星期 不包含月份 -->
+        搜索: <input type="search"><br> <!-- 搜索框 自带清空按钮 -->
+        颜色: <input type="color"><br> <!-- 颜色选择框 -->
+        电话: <input type="tel"><br> <!-- 移动端会默认调用数字键盘 -->
+        时间: <input type="time"><br> <!-- 选择时间-小时:分钟 -->
+        提交: <input type="submit">
+        <!-- autocomplete 自动完成 默认开启 输入时会显示备选框 on / off -->
+        <!-- autofocus 自动聚焦 默认关闭 开启时会在输入框自动显示光标 -->
+        <!-- required 输入框为空时不能提交 -->
+        <!-- pattern 正则验证 -->
+        <!-- method: get/post get传输数据会在浏览器地址栏中显示 而post则会隐藏不显示 -->
+        <!-- enctype="要上传数据的类型" -->
+
+        <fieldset> <!-- 表单元素分组 -->
+            <legend>登录</legend> <!-- 分组标题 -->
+            <p>用户名<input type="text"></p>
+            <p>密码<input type="password"></p>
+        </fieldset>
+
+        <select>
+            <optgroup label="水果">
+                <option value="">苹果</option>
+                <option value="">葡萄</option>
+            </optgroup>
+            <optgroup label="蔬菜">
+                <option value="">青瓜</option>
+                <option value="">番茄</option>
+            </optgroup>
+        </select>
+     </form>
+</body>
+</html>

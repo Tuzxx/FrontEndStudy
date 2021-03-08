@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border-style: solid; /* dashed-虚线 dotted-点线 中间加上方向(top left right bottom)可单独设置对应边*/
+            border-color: blue;
+            border-width: 1px;
+        }
+
+        .triangle{  /* 三角形/箭头 */
+            width: 0px; height: 0px;
+            border-top-style: solid;
+            border-top-color: transparent; /* 透明 */
+            border-top-width: 30px;
+            border-left-style: solid;
+            border-left-color: red;
+            border-left-width: 30px;
+            border-right-style: solid;
+            border-right-color: transparent;
+            border-right-width: 30px;
+            border-bottom-style: solid;
+            border-bottom-color: transparent;
+            border-bottom-width: 30px;
+        }
+    </style>
+</head>
+<body style="background-color: teal;">
+    <div></div>
+    <div class="triangle"></div>
+</body>
+</html>

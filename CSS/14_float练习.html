@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        a{text-decoration: none;}
+        ul{list-style: none;}
+        h1,h2{font-size: 16px; font-weight: normal;}
+
+        .l{float: left;}
+        .r{float: right;}
+        .clear{content: ''; display: block; clear: both;}
+
+        #main{width: 455px; height: 218px; border: solid; border-color: #e0e0e0;}
+        #main h2{height: 23px; background: url(../img/float-1.png) repeat-x; border-bottom: solid; border-color: #e0e0e0;
+                font-size: 15px; font-weight: bold; color: #1d315d; line-height: 23px; padding-left: 12px;}
+
+        #ul_1{
+            padding-top: 13px;
+            padding-left: 19px;
+            margin-bottom: 8px;
+        }
+        #ul_1 li{
+            width: 130px;
+            height: 106px;
+            font-size: 14px;
+            color: #585858;
+            margin-right: 14px;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding-top: 1px;
+        }
+        #ul_1 li img{
+            width: 128px;
+            height: 80px;
+        }
+        #ul_1::after{
+            content: '';
+            clear: left;
+            display: block;
+        }
+
+        #ul_2{
+            width: 435px;
+            height: 62px;
+            border-top: dashed;
+            border-color: #ededed;
+            margin-left: 7px;
+            padding-left: 22px;
+        }
+        #ul_2 li{
+            width: 200px;
+            line-height: 27px;
+            font-size: 10px;
+            list-style-type: disc;
+            color: #c1bfbf;
+        }
+
+        #ul_2 li a{
+            color: #525d86;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>视觉焦点</h2>
+        <ul id="ul_1">
+            <li class="l"><img src="../img/float-img.png">韩中小学生雪地军训</li>
+            <li class="l"><img src="../img/float-img.png">奥巴马度假打高球</li>
+            <li class="l"><img src="../img/float-img.png">回访舟曲：阳光美好</li>
+        </ul>
+        <ul id="ul_2">
+            <li class="l"><a href="#">菲律宾封枪迎新年</a></li>
+            <li class="l"><a href="#">安徽黄山出现罕见雪凇奇观</a></li>
+            <li class="l"><a href="#">英国举行礼节日狩猎活动</a></li>
+            <li class="l"><a href="#">全球最恐怖的十大恶魔鱼</a></li>
+        </ul>
+    </div>
+</body>
+</html>

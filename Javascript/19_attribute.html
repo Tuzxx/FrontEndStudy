@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="div1" xxx="yyy" >123<a href="">123</a></div>
+    <div></div>
+</body>
+<script>
+    var oDiv = document.getElementById("div1");
+    
+    // getAttribute 通过行间属性名来获取行间属性的值(即使这个属性名是自定义的)
+    alert(oDiv.getAttribute("class"));
+    alert(oDiv.getAttribute("xxx"));
+
+    // setAttribute 设置行间属性，原理同上
+    oDiv.setAttribute("class", "box1");
+    alert(oDiv.getAttribute("class"));
+
+    // remove 删除行间属性
+    oDiv.removeAttribute("xxx");
+
+    // innerHTML 标签内所有内容(包括子标签)
+    alert(oDiv.innerHTML)
+
+    // innerText 标签内文本(包含文本样式)
+    alert(oDiv.innerText)
+
+    // outerHTML 外标签开始到外标签结束(包括自身标签)
+    alert(oDiv.outerHTML)
+</script>
+</html>

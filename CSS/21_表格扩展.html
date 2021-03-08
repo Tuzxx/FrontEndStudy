@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            empty-cells: hide; /* 隐藏空单元 */
+            border-collapse: collapse; /* 边框样式-单线 */
+        }
+        table .line{ /* 斜线 */
+            border-top: 50px solid rebeccapurple; 
+            border-left: 150px solid blueviolet;
+            position: relative;
+            color: white;
+        }
+        .span_1{
+            position: absolute;
+            top: -45px;
+            left: -45px;
+        }
+        .span_2{
+            position: absolute;
+            top: -25px;
+            left: -130px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellspacing="2">
+        <caption>城市天气</caption>
+        <colgroup> <!-- 列分组 -->
+            <col span="2" style="background-color: teal;">
+            <col span="2" style="background-color: darkorchid;">
+        </colgroup>
+        <tHead>                 
+                <th colspan="2">
+                    <div class="line">
+                        <span class="span_1">详情</span>
+                        <span class="span_2">城市</span>
+                    </div>
+                </th>
+                <th>天气</th>
+                <th>日期</th>
+            </tr>
+        </tHead>
+        <tBody>                 
+                <td>深圳</td>
+                <td>福田</td>
+                <td>多云小雨不宜出门</td>
+                <td>2020.3.14</td>
+            </tr>
+            <tr>
+                <td>广州</td>
+                <td>从化</td>
+                <td>天气晴朗，空气舒适</td>
+                <td></td>
+            </tr>
+        </tBody>
+        <tFoot>
+            
+        </tFoot>
+    </table>
+</body>
+</html>

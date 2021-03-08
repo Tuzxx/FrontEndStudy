@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 500px;
+            border: 1px black solid;
+            margin: 50px auto;
+            display: flex;
+        }
+        #box div{
+            width: 100px;
+            height: 100px;
+            background-color: navy;
+        }
+        /* #box div:nth-child(3){
+            order: 1;
+        } */ /* 默认为0 值大往后排 值小往前排 */
+        #box div:nth-child(3){
+            background-color: palevioletred;
+            flex-grow: 0.5; /* 扩展flex子项空间 侵占剩余空间(默认为0) 若值为小数,则侵占 剩余×小数的空间大小 若值大于1,则与其他值大于1的按数字大小分配 */
+        }
+
+        #box2{
+            width: 500px;
+            height: 500px;
+            border: 1px black solid;
+            margin: 50px auto;
+            display: flex;
+        }
+        #box2 div{
+            width: 100px;
+            height: 100px;
+            background-color: palevioletred;
+        }
+        #box2 div:nth-child(3){
+            background-color: salmon;
+            flex-shrink: 0; /* 收缩(默认为1) 行内空间已满 flex子项开始收缩 而shrink的值为0,则表示不收缩 0-1之间则轻微收缩 1以上则比其他子项收缩更多 */
+            flex-basis: 100px; /* 默认大小 在行内有剩余空白空间时的默认大小 若大于剩余空间则会占满剩余空间,不会压缩其他flex子项 优先级比width高 */
+            flex: 1 1 100px; /* flex-grow flex-shrink flex-basis的复合写法 */
+            align-self: center; /* 针对单个flex子项进行侧轴方向上对齐 */
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <div id="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

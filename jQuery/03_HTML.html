@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .testClass {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div id="catchB">捕获</div>
+    <input id="catch"><b>Text</b></input>
+  </div>
+  <br>
+  <div>
+    <div id="add">添加元素</div>
+  </div>
+</body>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+<script>
+  // 捕获
+  // text() - 设置或返回所选元素的文本内容
+  // html() - 设置或返回所选元素的内容（包括 HTML 标记）
+  // val()  - 设置或返回表单字段的值
+  // attr() - 方法用于获取属性值。
+  $('#catchB').click(function() {
+    alert($('#catch').val()) 
+  })
+  // 在括号内输入值则为设置对应的内容
+  $('#catchB').click(function() {
+    $('#catch').val('hello world')
+    $('#catch').attr('class','test') // 设置属性
+  })
+  // 回调函数
+  // 有两个参数，一是当前元素下标，二是原来的文本内容
+
+  // -----------------------
+  // 添加元素
+  // append() 方法在被选元素的结尾插入内容(仍然在该元素的内部)
+  // prepend() 方法在被选元素的开头插入内容
+  // after() 方法在被选元素之后插入内容
+  // before() 方法在被选元素之前插入内容
+  $('#add').append('<p>append</p>').prepend('<p>prepend</p>').after('<div>after</div>').before('<div>before</div>')
+
+  // -----------------------
+  // 删除元素
+  // remove() 方法删除被选元素及其子元素
+  // empty() 方法删除被选元素的子元素
+  $('div').remove('#test') // 筛选删除
+
+  // -----------------------
+  // CSS 类
+  // addClass() 给元素添加Class属性
+  // removeClass() 删除元素指定的Class属性
+  $('div').addClass('testClass')
+
+  // css() 方法
+  // 返回css属性
+  $('div').css('width') // 返回第一个匹配元素的width值
+
+  // 设置css属性
+  $('#div').css(
+    {'width':'100px'}
+  )
+
+  // 尺寸
+  // width()和height()方法
+  // width()  方法设置或返回元素的宽度(不包括内边距、边框或外边距)
+  // height() 方法设置或返回元素的高度(不包括内边距、边框或外边距)
+
+  // innerWidth()和innerHeight()方法
+  // innerWidth()  方法返回元素的宽度(包括内边距)。
+  // innerHeight() 方法返回元素的高度(包括内边距)。
+
+  // outerWidth()和outerHeight() 方法
+  // outerWidth()  方法返回元素的宽度(包括内边距和边框)
+  // outerHeight() 方法返回元素的高度(包括内边距和边框)
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 双飞翼布局 */
+        /* 页面变窄变宽  两边的宽都保持不变 中间自适应 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .header{ width: 100%; height: 200px; background-color: cadetblue;}
+        .box .center{
+            width: 100%; /* 保证盒子宽可以无限延长或缩短 */
+            height: 200px;
+            float: left;
+        }
+        .box .center p{
+            background-color: darkgreen;
+            height: 100%;
+            margin: 0 200px 0 200px; /* margin距离为左右盒子的宽度 保证内容不会被覆盖 */
+        }
+        .box .left{
+            width: 200px;
+            height: 200px;
+            float: left;
+            background-color: crimson;
+            margin-left: -100%; /* 从下行移到center左边 */
+        }
+        .box .right{
+            width: 200px;
+            height: 200px;
+            float: left;
+            background-color:darkblue;
+            margin-left: -200px; /* 从下行移到center右边 */
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="box">
+        <div class="center">
+            <p>内容</p>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

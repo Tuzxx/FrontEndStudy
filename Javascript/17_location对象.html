@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            window下的location === document下的location
+            location 对象
+                包含当前页面的url信息
+                    Uniform Resource Locator
+                        protocol :// hostname[:port] / path / [;parameters][?query]#hash
+                        协议://主机名[:端口号]/路径/[?查询字符串]#锚点
+            
+            location.protocol 当前页面的协议
+            location.hostname 当前页面的主机名/IP
+            location.pathname 当前页面的路径
+            location.search   当前页面的查询字符串
+            location.hash     当前页面所在位置的锚点
+
+            url
+                location object类型
+                location.href String类型
+
+            方法
+                location.assign(url) 当前页面跳转到新链接，可返回
+                location.replace(url) 当前页面跳转到新链接 不可返回
+                location.reload(true) 刷新页面 true:直接从服务器接受数据刷新页面
+        */
+        alert(location.protocol);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

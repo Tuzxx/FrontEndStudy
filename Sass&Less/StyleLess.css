@@ -1,0 +1,79 @@
+/* 多行注释会被编译 */
+.box_1 {
+  width: 120px;
+  height: 120px;
+  background: blue;
+}
+ul {
+  display: flex;
+}
+ul li {
+  float: left;
+}
+ul li div {
+  width: 100px;
+}
+ul li p {
+  width: 200px;
+}
+ul:hover {
+  background-color: blue;
+  width: 300px;
+  height: 2100px;
+  height: 2100rem;
+  margin: 100px / 1.5;
+}
+.box_2 {
+  width: 100;
+  height: 50%;
+  font-size: 10;
+}
+.box_3 {
+  border: 1px;
+  width: 100;
+  height: 50%;
+  font-size: 10;
+  overflow: hidden;
+}
+#over .hidden {
+  overflow: hidden;
+}
+.box_4,
+.box_5 {
+  overflow: hidden;
+}
+.box_6 {
+  background: url(a.png), url(b.pnb);
+  transform: translate(100px) rotate(45deg);
+}
+.box_7 {
+  width: 100px;
+  height: 100px;
+}
+@media all and (min-width: 768px) {
+  .box_7 {
+    width: 200px;
+  }
+}
+@media all and (min-width: 1440px) {
+  .box_7 {
+    width: 400px;
+  }
+}
+.box_8 {
+  width: 100px;
+  height: 100px;
+}
+.box-2 {
+  width: 120px;
+}
+.box-1 {
+  width: 110px;
+}
+.box-0 {
+  width: 100px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}

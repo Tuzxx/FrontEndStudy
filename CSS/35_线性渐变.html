@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box_1{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            margin: 100px auto;
+            background-image: linear-gradient(/* to right */45deg, red 50%, blue); /* 渐变色 */ /* 默认从上到下渐变 */ 
+            /* 开头to + 方向改变渐变方向 */ /* 开头加角度 正值按顺时针旋转 负值按逆时针旋转 */ /* 颜色后面加百分比可以分配区域 */
+        }
+        #box_2{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            margin: 100px auto;
+            background-image: radial-gradient(blue, red); /* 径向渐变 从内到外 */ /* 颜色后面加百分比可以分配区域 */
+        }
+    </style>
+</head>
+<body>
+    <div id="box_1">
+    </div>
+    <div id="box_2"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_2{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            transition-property: all; /* 变化范围 */
+            transition-duration: 2s; /* 变化时间 */
+            transition-delay: 0s; /* 变化开始时间 若为负则提前 */
+            transition-timing-function: cubic-bezier(.1,.81,.28,1.49); /* 变化速率曲线 */ 
+            /* https://cubic-bezier.com/#.1,.81,.28,1.49 定制曲线网站 */
+        } /* 过渡属性要写在变化前选择器里 不然没有变回的动画效果 */
+
+        #div_2:hover{
+            width: 500px;
+            height: 500px;
+            background-color: crimson;
+        }
+
+        #div_3{
+            width: 200px;
+            height: 200px;
+            background-color: darkgray;
+            padding-top: 100px;
+        }
+
+        #div_1{
+            width: 100px;
+            height: 2px;
+            background-color: darkblue;
+            transition:all 1s;
+        }
+
+        #div_3:hover #div_1{
+            width: 200px;
+            height: 2px;
+            background-color: darkslateblue;
+        }
+
+        ul, li{ margin: 0; padding: 0; list-style: none;}
+        ul{width: 420px;}
+        ul li{ height: 60px; width: 70px; float: left; background: url('../img/nav.png'); transition: all 0.5s;}
+        ul li:nth-child(1){background-position: 0px -95px;}
+        ul li:nth-child(2){background-position: -70px -95px;}
+        ul li:nth-child(3){background-position: -150px -95px;}
+        ul li:nth-child(4){background-position: -230px -95px;}
+        ul li:nth-child(5){background-position: -310px -95px;}
+        ul li:nth-child(6){background-position: -390px -95px;}
+
+        ul li:hover:nth-child(1){background-position: 0px 0px;}
+        ul li:hover:nth-child(2){background-position: -70px 0px;}
+        ul li:hover:nth-child(3){background-position: -150px 0px;}
+        ul li:hover:nth-child(4){background-position: -230px 0px;}
+        ul li:hover:nth-child(5){background-position: -310px 0px;}
+        ul li:hover:nth-child(6){background-position: -390px 0px;}
+        
+    </style>
+</head>
+<body>
+    <div id="div_2"></div>
+    <br>
+    <div id="div_3">
+        <div id="div_1"></div>
+    </div>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

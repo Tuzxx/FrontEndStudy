@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_1{
+            width: 100px;
+            height: 100px; 
+            background-color: tomato;
+            /* animation-name: myBox; 动画名称
+            animation-duration: 5s; 动画总时长
+            animation-delay: 0ms; 动画开始时间
+            animation-iteration-count: infinite; 动画运行次数
+            animation-timing-function: ease; 动画运行速率函数 */
+            animation: myBox 5s 0ms infinite ease;
+        }
+
+        @keyframes myBox{
+            0%{ transform: translate(0,0);}
+            20%{ transform: translate(100px,100px);}
+            40%{ transform: translate(100px,100px) rotate(50deg);}
+            60%{ transform: translate(100px,100px) scale(3);}
+            80%{transform: translate(100px,100px) scale(1);}
+            100%{transform: translate(0,0);}
+        } /* 动画执行过程 若使用了transform中某一动作，而下个进程没有使用，则会自动变回初始样式 */
+
+        /* 淡入淡出 图标切换 */
+        #box_1{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            margin: 30px auto;
+        }
+        #box_2{
+            width: 64px;
+            height: 64px;
+            background: url('../img/Batman1.png');
+            margin: 50px auto;
+        }
+        #box_1:hover #box_2{
+            animation: Bat 0.5s 0s 1 ease;
+            background: url('../img/Batman2.png');
+        }
+        @keyframes Bat {
+            0% { transform: translate(0, 0); opacity: 1; background: url('../img/Batman1.png');}
+            60% { transform: translate(0, -50px); opacity: 0; background: url('../img/Batman1.png');}
+            61% {transform: translate(0, 30px); opacity: 0;}
+            100% {transform: translate(0, 0); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div id="div_1"></div>
+    <div id="box_1">
+        <div id="box_2">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 安装jQuery -->
+  <!-- npm install jQuery -->
+  <!-- 或 通过cdn引用 -->
+  <script src="https://apps.bdimg.com/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    // 语法
+    /*
+      $(selector).action
+      对指定的HTML元素执行操作
+
+      $定义jQuery
+      selector查询和查找HTML元素
+      action()执行对元素的操作
+    */
+
+    // 文档就绪事件
+    /*
+      $(document).ready(fuction() {
+        // 编写jQuery代码
+      })
+    */
+    // 防止文档在完全加载就绪之前运行jQuery代码,即在DOM加载完成后才运行jQuery代码
+    // 以避免查询 试图操作一个不存在的元素 或 获取到未加载完成图像的大小
+    // 简洁写法
+    /*
+      $(function() {
+        // 编写jQuery
+      })
+    */
+    // 与上一个代码段作用完全一样
+
+    // 元素选择器 $("div")
+    // id选择器 $("#id_1")
+    // class选择器 $(".class_1")
+
+    // 混合选择
+    // $("div#id_1")
+    // $("div.class_2")
+    // $("div:first")
+    // $("div p:first")
+    // $("ul li:first-child")
+    // $("[属性=属性值]") 无属性值也可以
+    // $(":button") 选取所有 type="button" 的 <input> 元素 和 <button> 元素
+
+    // jQuery事件
+    // 鼠标事件     键盘事件	    表单事件	    文档/窗口事件
+    // click	     keypress	    submit	      load
+    // dblclick	   keydown	    change	      resize
+    // mouseenter	 keyup	      focus	        scroll
+    // mouseleave	              blur	        unload
+    // hover
+    
+    
+  </script>
+</head>
+<body>
+</body>
+</html>

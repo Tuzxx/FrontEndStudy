@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            强制转换数据类型:
+                Boolean() 将其他数据类型强制转换成布尔值
+                    只有 0/""/undefined/null/NaN 会被转换成false
+
+                Number() 将其他数据类型强制转换成数字
+                    只有纯数字的字符串才可以转换成数字,其他都转换成NaN
+                
+                parseInt() 取整 将其他进制转换成十进制
+                    去掉数字的小数部分，只保留整数部分
+                    字符串只取非数字字符前的数字，若字符串第一个字符为非数字，则转换成NaN
+                    将其他进制的数字以字符串形式输入parseInt(str，int) 第一个空填数字，第二个空填进位制(2~36)
+                
+                parseFloat() 取浮点数
+                    字符串只取非数字字符前的数字，若字符串第一个字符为非数字，则转换成NaN
+        */
+        alert(Boolean("0"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

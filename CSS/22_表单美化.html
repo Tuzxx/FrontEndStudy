@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #check input{
+            display: none;
+        }
+        #check div{
+            width: 200px;
+            height: 200px;
+            background-image: url(../img/select.png);
+        }
+        #check input:checked + div{
+            background-image: url(../img/checked.png);
+        }
+
+        #upload input{
+            display: none;
+        }
+        #upload div{
+            height: 32px;
+            width: 40px;
+            background-image: url(../img/upload.png);
+        }
+
+        /* 第二种方法 : position定位后 opacity透明 */
+    </style>
+</head>
+<body>
+    <!-- 选择框美化 -->
+    <label id="check">
+        <input type="checkbox">
+        <div></div>
+    </label>
+
+    <!-- 上传美化 -->
+    <label id="upload">
+        <input type="file">
+        <div></div>
+    </label>
+</body>
+</html>

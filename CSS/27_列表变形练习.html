@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, li{ padding: 0; margin: 0;}
+        ul{ list-style: none;}
+
+        ul{ width: 921px; height: 615px; border: 2px #e6e6e6 solid; margin: 50px auto;}
+        ul .list_photo{
+            width: 279px;
+            height: 279px;
+            float: left;
+            background: url('../img/list.png');
+            margin: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        ul li .list_photo_box_1{
+            width: 390px;
+            height: 390px;
+            opacity: 0.2;
+            background-color: #b02461;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: rotate(45deg) translate(-470px, -200px);
+            transition: 2s;
+        }
+        ul li .list_photo_box_2{
+            width: 390px;
+            height: 390px;
+            opacity: 0.2;
+            background-color: #b02461;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: rotate(-45deg) translate(-200px, 310px);
+            transition: 2s;
+        }
+        /* 280px, 250px */
+        ul li:hover .list_photo_box_1{
+            transform: rotate(45deg) translate(-270px, 0px);
+        }
+        ul li:hover .list_photo_box_2{
+            transform: rotate(-45deg) translate(0px, 110px);
+        }
+        /* ul li .list_photo_text{
+
+        } */
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="list_photo">
+            <img src="../img/list.png">
+            <div class="list_photo_box_1"></div>
+            <div class="list_photo_box_2"></div>
+            <div class="list_photo_text"></div>
+        </li>
+        <li class="list_photo">
+            <img src="../img/list.png">
+            <div class="list_photo_box_1"></div>
+            <div class="list_photo_box_2"></div>
+            <div class="list_photo_text"></div>
+        </li>
+        <li class="list_photo">
+            <img src="../img/list.png">
+            <div class="list_photo_box_1"></div>
+            <div class="list_photo_box_2"></div>
+            <div class="list_photo_text"></div>
+        </li>
+        <li class="list_photo">
+            <img src="../img/list.png">
+            <div class="list_photo_box_1"></div>
+            <div class="list_photo_box_2"></div>
+            <div class="list_photo_text"></div>
+        </li>
+        <li class="list_photo">
+            <img src="../img/list.png">
+            <div class="list_photo_box_1"></div>
+            <div class="list_photo_box_2"></div>
+            <div class="list_photo_text"></div>
+        </li>
+        <li class="list_photo">
+            <img src="../img/list.png">
+            <div class="list_photo_box_1"></div>
+            <div class="list_photo_box_2"></div>
+            <div class="list_photo_text"></div>
+        </li>
+    </ul>
+</body>
+</html>

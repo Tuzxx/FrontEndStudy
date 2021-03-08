@@ -1,0 +1,138 @@
+// CSS预处理
+// 单行注释不会被编译
+/* 多行注释会被编译 */
+
+//定义变量
+$number_1: 100px;
+$bg: background;
+$box1: 1;
+
+.box_#{$box1}{
+    width: $number_1;
+    
+    // 变量值只往上找
+    $number_1: 120px;
+    height: $number_1;
+    #{$bg}: red;
+}
+
+// 选择器嵌套
+ul{
+    display: flex;
+    li{
+        float: left;
+        div{
+            width: 100px;
+        }
+        p{
+            width: 200px;
+        }
+    }
+    // 伪类选择器嵌套
+    &:hover{
+        background-color: blue;
+
+        // 属性嵌套
+        font: {
+            size: 16px;
+            weight: normal;
+        }
+
+        // 数值运算 单位不同无法计算 会报错
+        width: 100px * 3;
+        // 除号/默认是分割操作,不进行运算
+        margin: 100px / 1.5; 
+        // 加了括号 除号就会进行运算
+        font-size: (100px / 20);
+    }
+}
+
+// 自定义函数 less无
+@function sum($i, $j){
+    @return $i + $j;
+}
+
+.box_2{
+    width: round(100.1); // 四舍五入
+    height: percentage(0.5); // 转成百分比
+    font-size: random(); // 随机数 less无
+    padding: sum(10px, 90px);
+}
+
+// 混入写法
+// 不会在CSS里生成
+@mixin overflow($i) {
+    overflow: $i;
+}
+
+.box_3{
+    border: 1px;
+    @include overflow(hidden);
+}
+// 继承
+.box_4{
+    @extend .box_3;
+}
+
+// 模块类
+%box{
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+}
+.box_5{
+    @extend %box; 
+}
+.box_6{
+    @extend %box;
+}
+
+// 合并
+$bg:(
+    a: url(a.png),
+    b: url(b.png)
+);
+$tf:(
+    a: translate(100px),
+    b: rotate(45deg)
+);
+.box_7{
+    // 默认逗号分隔
+    background: map-values($map: $bg);
+    // 用空格分隔
+    transform: zip(map-values($tf)...);
+}
+
+// 响应式布局
+.box_7{
+    width: 100px;
+    height: 100px;
+    @media all and (min-width: 768px) {
+        width: 200px;
+    }
+    @media all and (min-width: 1440px) {
+        width: 400px;
+    }
+}
+
+// 条件
+$i : 1;
+.box_8{
+    @if ($i > 5) {
+        width: 100px;
+        height: 100px;
+    }@else{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+// 循环
+@for $j from 9 to 12 {
+    .box_#{$j}{
+        width: 100px + $j * 10;
+    }
+}
+
+// 引入
+@import './mod.scss';

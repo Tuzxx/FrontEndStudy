@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            filter: blur(10px); /* 模糊 */
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 1px black solid;
+        }
+        .box2{
+            width: calc(100% - 50px); /* 计算 加减乘除都可以 */
+            height: calc(50% + 100px);
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/cat.jfif" alt="">
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

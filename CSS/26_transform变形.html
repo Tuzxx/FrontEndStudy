@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .f{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+        }
+        .box_1{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            transition: 2s;
+        }
+
+        .f:hover .box_1{
+           /* transform: translate(100px, 200px); */ /* 位移(x轴, y轴) */
+           /* transform: scale(2, 2); */ /* 缩放(宽, 高) */
+           /* transform: rotate(-1080deg); */ /* 旋转 (角度deg) (弧度rad 不常用) 正为顺时针 负为逆时针 */
+           /* rotate = rotateZ */
+           /* rotateX rotateY 是 3d旋转 */
+           /* transform: skew(30deg, 30deg); */ /* 斜切(x轴, y轴) 正向左 负向右 */
+           transform-origin: center; /* 中心点(x轴, y轴, z轴(3d)) */
+           transform: rotate(180deg) translate(100px, 0);
+           /* 复合变形从后往前  <————————————< */
+        }
+
+
+        /* 斜切导航栏 */
+        ul, li{ padding: 0; margin: 0;}
+        ul{ list-style: none;}
+        ul{ width: 430px; margin: 30px auto; overflow: hidden;}
+        ul li{ float: left; width: 100px; height: 30px; background-color: blueviolet; color: white; line-height: 30px; text-align: center;
+            margin: 0 5px; transform: skewX(-30deg);}
+        ul li span{ display: block; transform: skewX(30deg);}
+        ul li:first-child{
+            padding-left: 20px; margin-left: -20px;
+        }
+        ul li:last-child{
+            padding-right: 20px; margin-right: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="f">
+        <div class="box_1"></div>
+    </div>
+    <ul>
+        <li><span>首页</span></li>
+        <li><span>关于我们</span></li>
+        <li><span>联系方式</span></li>
+        <li><span>招聘信息</span></li>
+    </ul>
+</body>
+</html>

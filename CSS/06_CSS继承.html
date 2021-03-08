@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 类的继承 */
+        /* 上级容器的样式可以直接继承到下级 仅限文字类样式 布局类样式不可继承(默认不可) */
+        /* inherit可使布局类样式也获得继承 */
+        .div_1{
+            width: 500px;
+            height: 500px;
+            border: solid;
+            border-color: lightcoral;
+            font-size: 50px;
+            font-style: italic;
+        }
+        .p_1{
+            width: inherit;
+            height: inherit;
+            border: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="div_1">
+        <p class="p_1">for example</p>
+    </div>
+</body>
+</html>

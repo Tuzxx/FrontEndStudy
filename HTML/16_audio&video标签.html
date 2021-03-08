@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- audio 表示嵌入音频文件 -->
+    <!-- video 表示嵌入视频文件 -->
+    <!-- 默认控件不显示 可通过controls属性来显示控件 -->
+    <!-- 为了能够支持多个备选文件的兼容支持 可以配和source标签 -->
+    <audio src="../img/周杰伦 - 说好不哭（with 五月天阿信）.flac" controls></audio> <!-- loop-循环播放 auto-自动播放 -->
+    <video src="../img/[高清 1080P] 【全程燃炸向】百部游戏CG大混剪 __前方高能来袭！！！.flv" controls></video> <!-- 不支持flv格式 同样支持loop auto -->
+    
+    <video> <!-- 多个视频源 备用 -->
+        <source src="#" type="video/flv">
+        <source src="#" type="video/mp4">
+    </video>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            margin: 50px auto;
+            display: flex; /* 弹性盒 */ /* 更容易实现垂直居中 */
+        }
+        #box div{
+            width: 100px;
+            height: 100px;
+            background-color: navy;
+            margin: auto; /* 若没有display: flex 则无法实现垂直居中，只能实现水平居中 */
+        }
+        #box2{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: row; /* flex-子项排列方向 row(默认)-靠左上,从左往右 row-reverse-反向 靠右上,从右往左 */
+                                        /* column-靠左上,从上到下 column-reverse-反向 靠左下,从下到上 */
+
+            flex-wrap: wrap; /* flex-子项换行 nowrap(默认) flex-子项宽度大于容器宽度时不换行,会自动压缩 flex-子项宽度保持单行 直到flex-子项无法继续压缩时会溢出容器保持单行 */
+                            /* wrap flex-子项宽度大于容器宽度时会自动换行,但行与行之间有空隙,是受到align-items的默认值(stretch)拉伸的影响 */
+                           /* wrap-reverse 跟wrap反向 换行的在上 */
+
+            flex-flow: row wrap; /* 以上两个样式的复合写法 */
+
+            /* jusify-content flex-子项在主轴上的对齐方式 */
+            justify-content: center;
+            /* flex-start(默认) 在flex-子项开始的地方对齐 */
+            /* flex-end 在flex-子项结束的地方对齐 */
+            /* flex-center 在行中间对齐 */
+            /* space-between 在行两端对齐 */
+            /* space-around 每个flex-子项块左右都有等宽的空白间距 */
+            /* space-evenly 平等分配空间 每个flex-子项块两边的空白都一样大 */
+        
+            /* align-items flex-子项在侧轴上的对齐方式 */
+            align-items: center;
+            /* stretch(默认值) 拉伸 若flex子项没有固定高度则会直接拉伸至100% 若有多行则平均分配,即使flex子项固定了高度,但依然会平均分配高度 这就是为什么行与行之间会有空白 其他值不会 */
+            /* flex-start 容器顶部对齐 */
+            /* flex-end 容器底部对齐 */
+            /* center 垂直居中对齐 */
+        }
+        #box2 div{
+            width: 50px;
+            height: 50px;
+            background-color: orangered;
+            line-height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div></div>
+    </div>
+    <div id="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

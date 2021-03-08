@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            font-size: 20px;
+            text-align: center;
+            padding: 100px;
+            text-shadow: 10px 10px 10px gray, -20px -20px 5px darkmagenta;
+            /*      偏移量 x y 模糊度 blur 颜色 color   blur值越大 阴影越模糊 */
+
+            background-color: white;
+            box-shadow: 10px 10px 10px 10px gray inset;
+            /* 偏移量 x, y  模糊度 blur  阴影范围 spread  颜色 color  阴影类型 inset(内阴影) 默认外阴影,不用设置 */
+        }
+
+        #div2{
+            width: 300px;
+            height: 300px;
+            margin: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .5s;
+            background-image: url('../img/cat.jfif');
+            background-size: contain;
+        }
+        #div2:hover{
+            top: -3px;
+            box-shadow: 0px 5px 5px 3px #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        文字阴影
+    </div>
+    <div id="div2">
+
+    </div>
+</body>
+</html>

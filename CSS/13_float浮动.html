@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 如何清除浮动?
+            上下排列: clear属性， 表示清除浮动的，left、 right、 both
+
+            嵌套排列:
+                固定宽高不推荐，不能把高度固定死，不适合做自适应的效果。
+                父元素浮动:不推荐，因为父容器浮动也会影响到后面的元素。
+                overflow : hidden (BFC规范)，如果有子元素想溢出，那么会受到影响。
+                display : inline block (BFC规范)， 不推荐，父容器会影响到后面的元素。
+                设置空标签:不推荐，会多添加一个标签。
+                after伪类:推荐是空标签的加强版目前各大公司的做法。 */
+
+        /* body{
+            border: solid;
+            border-color: black;
+        }
+        #box_1{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            float: right;  float浮动——left, right, none 漂浮在普通文档流的上面 不和普通文档流在一层 
+        } */
+        /* float注意点
+            只会影响后面的元素。
+            内容默认提升半层。
+            默认宽根据内容决定。
+            换行排列。
+            主要给块元素添加，但也可以给内联元素添加。
+        */
+
+        /* #box_2{
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            clear: left;  清除浮动影响 ——right both
+        } */
+
+        #box_3{
+            width: 110px;
+            height: 10px;
+        }
+        #box_3::after{          /* 通过after伪类来消除子元素浮动的影响 */
+            content: '';        /* 因为内联块不能使用clear，所以要先把伪类改成块 */
+            clear: left;
+            display: block;
+        }
+        #box_4{
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: cornflowerblue;
+        }
+        #box_5{
+            width: 50px;
+            height: 50px;
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <!-- 同级
+    <div id="box_1">
+        float浮动
+    </div>
+    <div id="box_2">
+        普通文档流
+    </div> -->
+
+    <!-- 嵌套 -->
+    <div id="box_3">
+        
+        <div id="box_4">
+            float浮动
+        </div>
+    </div>
+    <div id="box_5">
+        普通文档流
+    </div>
+</body>
+</html>

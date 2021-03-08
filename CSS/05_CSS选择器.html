@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{ color: brown; } 标签选择器 */
+        /* #bg{ background-color: #000000; } id选择器 */
+        /* .bg_0{ background-color: brown; } Class选择器 */
+        /* div, #bg, .bg_0{ background-color: brown; } 群组选择器 */
+        /* *{ background-color: burlywood; } 通配选择器 */
+        
+        /* 层次选择器 */
+        /* div p{   后代选择器 div标签包括的所有p标签使用这个样式
+            height: 20px;
+            width: 20px;
+            background-color: brown;
+        } */
+        /* div > p{ 父子选择器 div标签包括的下一级的p标签使用这个样式
+            height: 20px;
+            width: 20px;
+            background-color: brown;
+        } */
+        /* div ~ p{ 兄弟选择器 div标签以下的所有同级p标签都使用这个样式
+            height: 20px;
+            width: 20px;
+            background-color: brown;
+        } */
+        /* div + p{ 相邻选择器 div标签下面相邻的p标签使用这个样式
+            height: 20px;
+            width: 20px;
+            background-color: brown;
+        } */
+
+        /* 属性选择器 */
+        /* div{
+            border-style: solid;
+            height: 30px;
+            width: 50px;
+        }
+        div[class]{ 用于div标签内含有class类的
+            background-color: brown;
+        }
+        div[class="div_2"]{ 用于div标签内含有class名为div_2的 完全匹配
+            border-color: cornflowerblue;
+        }
+        div[class*=Tu]{ 模糊匹配    ^=起始匹配  $=结束匹配
+            font-weight: bold;
+        }
+        div[class][id]{ 用于div标签含有class和id的 组合匹配
+            font-size: 50px;
+        } */
+
+        /* 伪类选择器 */
+        /* .tu{
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+        }
+        .tu:hover{  鼠标移入时显示样式
+            background-color: darkcyan;
+        }
+        .tu:active{ 鼠标按下时显示样式
+            background-color: darkgoldenrod;
+        }
+        .lianJ:link{    链接访问前显示样式
+            color: tomato;
+        }
+        .lianJ:visited{ 链接访问后显示样式
+            color: violet;
+        } */
+        /* .div_1{  
+            color: tomato;
+        }
+        .div_1::before{ 在div_1的内容前添加样式/文本内容
+            content: "Hi";
+            color: yellowgreen;
+        }
+        .div_1::after{  在div_1的内容后添加样式/文本内容
+            content: "Hi";
+            color: yellowgreen;
+        } */
+        /* 以下三个只能用于表单标签 */
+        /* :checked{    选项被选中时的样式
+            width: 100px;
+            height: 100px;
+        }
+        :disabled{  选项被禁用时的样式
+            width: 100px;
+            height: 100px;
+        }
+        :focus{ 输入框出现光标时的样式
+            background-color: tomato;
+        } */
+
+        /* 结构型伪类选择器 */
+        /* p:nth-of-type(2n){    按p的项数使用样式 2n则为2的倍数项使用样式
+            width: 10px;
+            height: 10px;
+            background-color: tomato;
+        } */
+        /* li:first-of-type{    li的第一项使用样式
+            background-color: tomato;
+        }
+        li:last-of-type{    li的最后一项会使用样式
+            background-color: violet;
+        }
+        p:only-of-type{ 唯一的p选项会使用这个样式 若有两个及以上的p标签则不显示样式
+            width: 50px;
+            height: 20px;
+            background-color: yellow;
+        } 若没有限定标签则可能使用在body标签上 */
+        /* nth-child是按整体的项数计算且指定项要符合指定标签才可显示样式 */
+    </style>
+</head>
+<body id="bg" class="bg_0">
+    <!-- <div>
+        <p></p>
+        <div>
+            <p>
+                <h1>
+                    <p></p>
+                </h1>
+            </p>
+        </div>
+        <p></p>
+        <div id="div_1">aaa</div>
+        <div class="div_2">bbb</div>
+        <div class="div_3">ccc</div>
+        <div class="zTu-1">ddd</div>
+        <div class="zTuz_2" id="div_4">eee</div>
+    </div> -->
+    <!-- <div class="tu">
+    </div>
+    <a href="##" class="lianJ">Hii</a> -->
+    <!-- <div class="div_1"> Hello </div> -->
+    <!-- <input type="checkbox">
+    <input type="text"> -->
+    <ul>
+        <li></li>
+        <li></li>
+        <p></p>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

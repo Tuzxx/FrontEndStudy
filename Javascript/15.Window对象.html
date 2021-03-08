@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Window对象 */
+        /*
+            window可省略
+            JavaScript默认方法对象为Window
+        */
+        alert("例如");
+        window.alert("这个");
+
+        /* confirm() 弹出带确认和取消按钮的提示框 */
+        confirm("Are you sure?");
+
+        /* prompt() 弹出带输入框的提示框 返回值为输入框里的内容 取消返回null */
+        prompt("请输入:", "默认值");
+
+        /* open 打开新页面窗口并跳转链接 */
+        function openBaidu(){
+            open("https://baidu.com", "firstPage", "_blank");
+        }
+        /* 第一个参数是指定跳转的链接 */
+        /* 
+            第二个参数是将新页面窗口命名并在新页面窗口跳转链接
+                若已有相同名字的窗口，则找到这个窗口并跳转链接 
+        */
+        /*
+            第三个参数
+                "_parent"
+                "_blank"
+                在本页面窗口弹出一个小窗口加载链接
+        */
+    </script>
+</head>
+<body>
+    <button onclick="openBaidu()">百度</button>
+</body>
+</html>

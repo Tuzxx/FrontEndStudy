@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Date 日期对象 */
+
+        /* 默认值(不传入参数) */
+        /* 自动根据当地时区提供此时此刻的时间 */
+        /* Thu Apr 16 2020 15:50:52 GMT+0800 (香港标准时间) */
+        var date1 = new Date();
+        document.write(date1 + "<br>");
+
+        /* 参数 */
+        /* "年-月-日" */
+        /* "年/月/日" */
+        /* 年, 月, 日, 时, 分, 秒, 毫秒 (月份从0开始 */
+        /* 毫秒数 1s = 1000ms 直接从1970年1月1日00:00:00开始计算(0时区) */
+        var date2 = new Date(1);
+        document.write(date2 + "<br>");
+
+        /* 日期对象的方法 */
+
+        /* toDateString() 只显示日期 */
+        document.write(date1.toDateString() + "<br>");
+
+        /* toTimeString() 只显示时间 */
+        document.write(date1.toTimeString() + "<br>");
+
+        /* toLocaleDateString() 只显示当地格式的日期 */
+        document.write(date1.toLocaleDateString() + "<br>");
+
+        /* toLocaleTimeString() 只显示当地格式的时间 */
+        document.write(date1.toLocaleTimeString() + "<br>");
+        
+        function showTime(){
+            var d = new Date();
+            /* get只能获取 set只能赋值 */
+            
+            var year = d.getFullYear();
+            var month = d.getMonth();
+            var date = d.getDate();
+
+            var weekChinese = ["日", "一", "二", "三", "四", "五", "六"];
+            var week = d.getDay();
+
+            var hour = time(d.getHours());
+            var min = time(d.getMinutes());
+            var sec = time(d.getSeconds());
+
+            document.write(year + "年" + month + "月" + date + "日" + " " + "星期" + weekChinese[week] + " " + hour + ":" + min + ":" + sec + "<br>");
+        }
+        function time(n){
+            if(n < 10){
+                return "0"+n;
+            }else{
+                return n;
+            }
+        }
+        showTime();
+        
+        /* getTime() Date.parse() */
+        /* 将当前时间转换成毫秒数 */
+        document.write(date1.getTime() + "<br>");
+        document.write(Date.parse(date1) + "<br>");
+
+        /* 重置毫秒数 */
+        document.write(date1.setTime(100000) + "<br>");
+
+        /* 定时器 */
+        /* setInterval(函数, 毫秒数) */
+        /* 每隔x毫秒就执行一次函数 */
+        /* 返回值为系统自动分配的编号 */
+        var i = 0;
+        // function autoAdd(){
+        //     if(i > 5){
+        //         clearInterval(no1); /* 停止执行对应编号的定时器 */
+        //     }
+        //     document.write(i++ + "<br>");
+        // }
+        // var no1 = setInterval(autoAdd, 1000);
+
+        /* 没有名字的函数-匿名函数 */
+        var timer = setInterval(function(){
+            if(i > 5){
+                clearInterval(no1); /* 停止执行对应编号的定时器 */
+            }
+            document.write(i++ + "<br>");
+        }, 1000)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

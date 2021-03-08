@@ -1,0 +1,124 @@
+// CSS预处理
+// 单行注释不会被编译
+/* 多行注释会被编译 */
+
+//定义变量
+@number_1: 100px;
+@bg : background;
+@box1 : 1;
+
+.box_@{box1}{
+    // 选择器内变量优先
+    @number_1: 120px;
+    width: @number_1;
+    height: @number_1;
+    @{bg}: blue;
+}
+
+// 选择器嵌套
+ul{
+    display: flex;
+    li{
+        float: left;
+        div{
+            width: 100px;
+        }
+        p{
+            width: 200px;
+        }
+    }
+    // 伪类选择器嵌套
+    &:hover{
+        background-color: blue;
+
+        //无属性嵌套 Sass才有 
+        
+        // 数值运算
+        width: 100px * 3;
+        height: 100px + 2000rem;
+        // 运算单位取决于前一项,后一项只提供数值,无视单位
+        height: 2000rem + 100px;
+        // 转义 保持符号不变,不进行运算
+        margin: ~"100px / 1.5"; 
+    }
+}
+
+.box_2{
+    width: round(100.1); // 四舍五入
+    height: percentage(0.5); // 转成百分比
+    font-size: sqrt(100); // 开方 sass无
+}
+
+// 加上括号 就不会在CSS里生成
+// 括号里是参数 可以传入
+.overflow(@i) {
+    overflow: @i;
+}
+
+// 混入写法 直接引用其他选择器的属性
+.box_3{
+    border: 1px;
+    .box_2;
+    .overflow(hidden);
+}
+
+// 命名空间 Sass无
+#over{
+    .hidden{
+        overflow: hidden;
+    }
+}
+// 引用
+.box_4{
+    #over.hidden;
+}
+// 继承
+.box_5{
+    &:extend(.box_4);
+}
+
+// 合并
+.box_6{
+    // 逗号分开
+    background+: url(a.png);
+    background+: url(b.pnb);
+
+    // 空格分开
+    transform+_: translate(100px);
+    transform+_: rotate(45deg);
+}
+
+// 响应式布局
+.box_7{
+    width: 100px;
+    height: 100px;
+    @media all and (min-width: 768px) {
+        width: 200px;
+    }
+    @media all and (min-width: 1440px) {
+        width: 400px;
+    }
+}
+
+// 条件
+@i : 10;
+.wh(@i) when (@i > 6){
+    width: 100px;
+    height: 100px;
+}
+.box_8{
+    .wh(@i)
+}
+
+// 循环 递归
+@j : 0;
+.get(@j) when (@j < 3){
+    .get((@j + 1));
+    .box-@{j}{
+        width: 100px + (@j * 10);
+    }
+}
+.get(@j);
+
+// 引入
+@import './mod.less';

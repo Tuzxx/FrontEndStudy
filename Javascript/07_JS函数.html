@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 函数 */
+        /*
+            function 函数名(形参1, 形参2,...){
+                执行语句;
+                return 返回值;
+            }
+
+            arguments
+                每个函数里都有一个系统内置的arguments
+                功能:存储传入函数的实参 
+        */ 
+        function add(n){
+            var sum = 0;
+            for(var i = 0; i <= n; i++){
+                sum += i;
+            }
+            document.write(arguments.length + "<br>"); /* 传入实参的个数 */
+            document.write(arguments[0] + "<br>"); /* 实参的数据 */ /* arguments下标按传入顺序从0开始 */
+            return sum;
+        }
+        var n = 100;
+        document.write(add(n) + "<br>");
+
+        /* 使用arguments做运算的函数 */ /* 慎用 */
+        /* 可用于有实参数量较多的情况 */
+        function addAny(){
+            var n = arguments.length;
+            var sum = 0;
+            for(var i = 0; i < n; i++){
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        document.write(addAny(1, 2, 3) + "<br>")
+
+        /* 递归练习 */
+        /* 
+            兔子繁殖:
+                设有一对新生兔子，从第四个月开始每个月月初都生一对兔子，而新生兔子亦如此，那么n(>=20)个月月末共有几对兔子？
+        */
+        function rabbit(n){
+            if(n == 3){
+                return 1;
+            }
+            return rabbit(n - 1) + rabbit(n - 3);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

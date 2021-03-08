@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 300px;
+            width: 300px;
+            border: 1px black solid;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        .box1 div{
+            background-color: blueviolet;
+            grid-column-start: 2; /* 列起始位置 */
+            grid-column-end: 4; /* 列结束位置 */
+            grid-row-start: 2; /* 行起始位置 */
+            grid-row-end: span 2; /* 占据行数 */
+            /* 行列名称默认按顺序1,2,3,4... */
+            grid-column: 2 / 4;
+            grid-row: 2 / span 2;
+            /* 复合写法 */
+            grid-area: 2 / 2 / 4 / span 2; /* 行开始 / 列开始 / 行结束 / 列结束 可用span */
+        }
+        .box2{
+            height: 300px;
+            width: 300px;
+            border: 1px black solid;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .box2 div{background-color: brown; border: 1px black solid;}
+        .box2 div:nth-child(2){
+            align-self: center; /* 单个网格的垂直方向对齐 */
+            justify-self: center; /* 单个网格的水平方向对齐 */
+            place-self: end center; /* 复合写法 align justify */
+        }
+        .box3{
+            height: 300px;
+            width: 300px;
+            border: 1px black solid;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: 
+            "a1 a2 a3"
+            "a4 a5 a6"
+            "a7 a8 a9"; /* 对网格区域命名 */
+        }
+        .box3 div{
+            background-color: blueviolet;
+            grid-area: a5; /* 通过区域名称直接定位 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div>1</div>
+    </div>
+    <div class="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="box3">
+        <div></div>
+    </div>
+</body>
+</html>

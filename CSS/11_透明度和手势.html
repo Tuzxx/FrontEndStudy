@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div_1{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            opacity: 0.5; /* 0(完全透明)——1(不透明) 全体透明包括内容*/
+            /* cursor: pointer; 鼠标指针变成手指 */
+            cursor: url(../img/Cursor/size1.cur ), auto; /* 自定义鼠标 指针格式为cur, ico */
+        }
+
+        .div_2{
+            width: 100px;
+            height: 100px;
+            cursor: move; /* 鼠标指针变成十字箭头 */
+            background-color:rgba(131, 18, 18, 0.1) /* alpha 可以单独对背景调透明度 */
+        }
+    </style>
+</head>
+<body>
+    <div class="div_1">
+        透明度和手势
+    </div>
+    <div class="div_2">
+        透明度和手势
+    </div>
+</body>
+</html>

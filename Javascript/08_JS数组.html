@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            数组
+                数据类型
+                    基本数据类型
+                    特殊数据类型
+                    复合/引用数据类型
+            
+            声明数组:
+                1. new Array()
+                    创建数组 括号内传入数据
+                    若括号只传入一个正整数，则表示为定义数组长度
+                
+                2. 省略new亦可以
+
+                3. [数组常量]进行赋值
+        */
+        
+        var arr = new Array("hello", "world", "Again");
+        var arr10 = new Array(10);
+
+        /*
+            数组的属性:
+                数组.length 返回值为数组的长度
+
+                元素:
+                    存在数组内的每一个数据
+                
+                访问数组元素:
+                    数组[下标]; 下标从0开始按存入顺序排序
+        */
+
+        document.write(arr[1] + "<br>");
+        
+        /* 使用循环遍历输出数组 */
+        for(var i = 0; i < arr.length; i++){
+            document.write(arr[i] + " ");
+        }
+
+        /*
+            Math.random() 随机数 默认[0，1）
+                [0~10) perseInt(Math.random() * 10);
+        */
+
+        /* 使用循环遍历输入数组 */
+        for(var i = 0; i < arr10.length; i++){
+            arr10[i] = parseInt(Math.random() * 10);
+        }
+
+        /* 快速遍历 for...in... */
+        for(var i in arr10){
+            document.write("<br>" + arr10[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

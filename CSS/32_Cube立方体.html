@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, li{margin: 0; padding: 0;}
+        ul{ list-style: none;}
+
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+            margin: 200px auto;
+            perspective: 200px;
+            perspective-origin: top right; /* 指定了观察者的位置，用作 perspective 属性的消失点。 */
+        }
+        #box ul{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 100px auto;
+            transition: 2s;
+            transform-style: preserve-3d; /* 将元素设为3D */
+            transform-origin: center center -50px; /* 中心点 */
+
+        }
+        #box ul li{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            opacity: 0.5;
+            backface-visibility: hidden; /* 即使透明也不能看到后面的元素 旋转可以 */
+        }
+        #box ul li:nth-child(1){ background-color: thistle; left: 0; top: 0;}
+        #box ul li:nth-child(2){ background-color: tomato; left: 100px; top: 0; transform-origin: left; transform: rotateY(90deg);}
+        #box ul li:nth-child(3){ background-color: brown; left: -100px; top: 0; transform-origin: right; transform: rotateY(-90deg);}
+        #box ul li:nth-child(4){ background-color: cadetblue; left: 0; top: -100px; transform-origin: bottom; transform: rotateX(90deg);}
+        #box ul li:nth-child(5){ background-color: chocolate; left: 0; top: 100px; transform-origin: top; transform: rotateX(-90deg);}
+        #box ul li:nth-child(6){ background-color: darkcyan; left: 0; top: 0; transform: translateZ(-100px) rotateY(180deg);}
+
+        /* 立方体旋转 */
+        #box:hover ul{ 
+            transform: rotate3d(0, 1, 0, 180deg); /* x, y, z, deg */
+        }
+
+        /* 立方体变厚 */
+        /* #box:hover ul{
+            transform: scale3d(1, 1, 2);  x, y, z
+        } */
+
+        /* 立方体移动 */
+        /* #box:hover ul{
+            transform: translate3d(100px, 100px, 100px); x, y, z
+        } */
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* 多行注释会被编译 */
+.box_1 {
+  width: 100px;
+  height: 120px;
+  background: red;
+}
+
+ul {
+  display: flex;
+}
+
+ul li {
+  float: left;
+}
+
+ul li div {
+  width: 100px;
+}
+
+ul li p {
+  width: 200px;
+}
+
+ul:hover {
+  background-color: blue;
+  font-size: 16px;
+  font-weight: normal;
+  width: 300px;
+  margin: 100px / 1.5;
+  font-size: 5px;
+}
+
+.box_2 {
+  width: 100;
+  height: 50%;
+  font-size: 0.09197;
+  padding: 100px;
+}
+
+.box_3, .box_4 {
+  border: 1px;
+  overflow: hidden;
+}
+
+.box_5, .box_6 {
+  width: 100px;
+  height: 100px;
+  border: 1px black solid;
+}
+
+.box_7 {
+  background: url(a.png), url(b.png);
+  transform: translate(100px) rotate(45deg);
+}
+
+.box_7 {
+  width: 100px;
+  height: 100px;
+}
+
+@media all and (min-width: 768px) {
+  .box_7 {
+    width: 200px;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  .box_7 {
+    width: 400px;
+  }
+}
+
+.box_8 {
+  width: 50px;
+  height: 50px;
+}
+
+.box_9 {
+  width: 190px;
+}
+
+.box_10 {
+  width: 200px;
+}
+
+.box_11 {
+  width: 210px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

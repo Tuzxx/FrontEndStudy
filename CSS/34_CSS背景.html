@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-child(1){
+            width: 100px;
+            height: 200px;
+            background: url('../img/select.png');
+            background-size: 100px 200px; /* 调整背景图大小 */
+            background-repeat: no-repeat;
+        }
+        div:nth-child(2){
+            width: 100px;
+            height: 200px;
+            background: url('../img/select.png');
+            background-size: contain; /* 按固定比例缩小 */
+            background-repeat: no-repeat;
+        }
+        div:nth-child(3){
+            width: 100px;
+            height: 200px;
+            background: url('../img/select.png');
+            background-size: cover; /* 直接按原图大小覆盖容器 */
+            background-repeat: no-repeat;
+        }
+        /* background-origin 填充起始位置*/
+        /* padding-box(默认) 在boder内填充背景图包括padding区域 */
+        /* boder-box 在整个容器填充背景图包括boder */
+        /* content-box 在内容区域填充背景图 在padding区域内 */
+        /* 若repeat则所有区域都会填充，但背景图的起始位置是上边所写区域 */
+        /* 若repeat也不想填充到其他区域则 ↓ */
+
+        /* background-clip 裁切位置 */
+        /* padding-box padding区域外不显示填充背景图 */
+        /* boder-box(默认) 在整个容器显示填充背景图 */
+        /* content-box 在内容区域显示填充背景图 */
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

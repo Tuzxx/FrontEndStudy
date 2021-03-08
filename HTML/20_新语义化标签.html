@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header> <!-- 页眉 -->
+        <hgroup></hgroup> <!-- 标题组 -->
+        <nav></nav> <!-- 导航栏 -->
+    </header>
+    <main>
+        <article>
+            <section> <!-- 划分区域  -->
+                <ul>
+                    <li>
+                        <figure> <!-- 描述图片/视频 -->
+                            <img src="../img/bm1.jfif" width="200px">
+                            <figcaption><!-- 描述图片/视频的标题部分 -->
+                                Batman
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <input type="text" list="elems">
+                <datalist id="elems"> <!-- 选项列表 输入框会出现备选项-->
+                    <option value="a"></option>
+                    <option value="b"></option>
+                    <option value="c"></option>
+                </datalist>
+                <details open> <!-- 文档标题 文档细节 -->
+                    <summary>HTML</summary>
+                    <p>超文本标记语言</p>
+                </details>
+                <progress min="0" max="100" value="60"></progress> <!-- 进度条 -->
+                <meter min="0" max="20" value="15" low="5" high="10"></meter> <!-- 度量 --> <!-- low high 警告 -->
+                <p>
+                    再过十天就是<time title="4.1">清明节</time>了 <!-- 定义日期/时间 -->
+                </p>
+                <p>
+                    已经<mark>大三</mark>了 <!-- 标记高亮 -->
+                </p>
+            </section>
+        </article> <!-- 独立内容 -->
+        <aside></aside> <!-- 侧边栏 -->
+    </main> <!-- 主体 -->
+    <footer></footer> <!-- 页脚 -->
+</body>
+</html>

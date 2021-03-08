@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .slide {
+      background-color:blueviolet;
+      border: 1px solid black;
+      height: 50px;
+      width: 100px;
+    }
+
+    .box {
+      height: 50px;
+      width: 50px;
+      background-color:brown;
+      position: absolute;
+    }
+  </style>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+  <script>
+    // -----------------------
+    // 显示/隐藏
+    $(function() {
+      $('#hideB').click(function() {
+        $('#div_1').hide(1000);
+      })
+      $('#showB').click(function() {
+        $('#div_1').show(function(){
+          alert("show")
+        });
+      })
+    })
+    // $(selector).hide(speed,callback);
+    // $(selector).show(speed,callback);
+    // 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+    // 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+
+    // $(selector).toggle(speed,callback);
+    // 在show和hide间相互切换
+
+    // -----------------------
+    // 淡入淡出
+    // $(selector).fadeIn(speed,callback);
+    // $(selector).fadeOut(speed,callback);
+    // $(selector).fadeToggle(speed,callback);
+    // $(selector).fadeTo(speed,opacity,callback); speed，opacity为必需参数
+    $(function() {
+      $('#fadeInB').click(function() {
+        $('#div_2').fadeIn()
+      })
+      $('#fadeOutB').click(function() {
+        $('#div_2').fadeOut()
+      })
+      $('#fadeToB').click(function() {
+        $('#div_2').fadeTo(1000, 0.1)
+      })
+    })
+
+    // -----------------------
+    // 滑动
+    // $(selector).slideDown(speed,callback);
+    // $(selector).slideUp(speed,callback);
+    // $(selector).slideToggle(speed,callback);
+    // 可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+    // 可选的 callback 参数是滑动完成后所执行的函数名称。
+    $(function() {
+      $('#slideB').click(function() {
+        $('#slideT').slideToggle()
+      })
+    })
+
+    // -----------------------
+    // 动画
+    // $(selector).animate({params},speed,callback);
+    // 必需的 params 参数定义形成动画的 CSS 属性。
+    // 可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+    // 可选的 callback 参数是动画完成后所执行的函数名称。
+    $(function() {
+      $('#animateB').click(function() {
+        $('.box').animate({left:'+=10px'})
+        $('.box').animate({left:'-=10px'})
+      })
+    })
+    // 停止动画
+    // $(selector).stop(stopAll,goToEnd);
+    // 可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。
+    // 可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。
+
+  </script>
+</head>
+<body>
+  <div>
+    <div>显示/隐藏</div>
+    <button id="hideB">hide</button>
+    <button id="showB">show</button>
+    <div id="div_1">Hello World</div>
+  </div>
+  <br>
+  <div>
+    <div>淡入淡出</div>
+    <button id="fadeInB">fade in</button>
+    <button id="fadeOutB">fade out</button>
+    <button id="fadeToB"> fade to</button>
+    <div id="div_2">Test</div>
+  </div>
+  <br>
+  <div>
+    <div>滑动</div>
+    <div id="slideB" class="slide">Slide</div>
+    <div id="slideT" class="slide">HelloWord</div>
+  </div>
+  <br>
+  <div>
+    <div>动画</div>
+    <div id="animateB">Animate</div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>

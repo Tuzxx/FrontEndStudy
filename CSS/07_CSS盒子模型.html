@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 盒子模型 */
+        /* content -> padding -> border -> margin */
+        /* 物品 -> 填充泡沫 -> 包装盒 -> 盒子和盒子的间距 */
+        #box_1{
+            width: 500px;
+            height: 500px;
+            background-color: lightcoral;
+            /* border-style: solid; */
+            /* box-sizing: border-box; 固定盒子大小 */
+            /* margin-top: 100px; */
+        }
+        /* 盒子模型的两个小问题 */
+        /* 上下相邻的两个盒子，上面的margin-bottom会和下面的margin-top重叠，只能单独设一边margin */
+        #box_2{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            /* border-style: solid; */
+            /* box-sizing: border-box; 固定盒子大小 */
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box_1">
+        我是一个盒子模型
+        <div id="box_2">
+            我是第二个盒子模型
+        </div>
+    </div>
+</body>
+</html>
